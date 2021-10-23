@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <style>
+        .or{
+            width: 100%;
+            margin-left: 44%;
+
+        }
+        body{
+            width: 100%;
+            
+        }
+        
+        fieldset{
+            display:block;
+            
+        }
+        
+        
+        p{
+            color: burlywood;  
+            
+        }
+        .input{
+            background-color: white;
+            color: black;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            width: 90%;
+            
+        }
+        .input:hover{
+            background-color: black;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+        legend{
+            width: fit-content;
+        }
+        .submit{
+            width: max-content;
+            margin: auto;
+            
+        }
+        .btns{
+            width: 50%;
+            margin-left: 32%;
+
+        }
+        button{
+            width: 50%;
+            margin-left: 22%;
+        }
+  
+      </style>
+    
+   <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <fieldset><legend>Register</legend>
+    <form action="../insertuser" method="post">
+        {% csrf_token %}
+        <p>Name:</p><input class="input" placeholder="Name" type="text" name="name">
+        <p>Email:</p><input class="input" placeholder="Email" type="text" name="email">
+        <p>Password</p><input class="input" placeholder="Password" type="password" name="pwd">
+        
+        <p class="btns"><input class ="btn" class="submit"  type="submit">
+        </form>
+        <p class="or">
+            or
+        </p>
+        <button><a href="./login">Already Registered!</a></button>
+    </p>
+   </fieldset>
+</body>
+</html>

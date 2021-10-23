@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>weather</title>
+  <!-- Latest compiled and minified CSS -->
+  <style>
+    body{
+      background: brown;
+    }
+    .input-group{
+      float:left;
+      display: inline-flex;
+    }
+    .form-control{
+      border-radius: 9px;
+      padding: 8px;
+      border: 1px solid rgb(0, 255, 234);
+      text-align: center;
+      margin: 9px;  
+      width: 432px;
+      background-color: blanchedalmond;
+    }
+    .btn{
+      color: rgb(255, 255, 255);
+      border: none;
+      background-color: rgb(98, 0, 255);
+      border-radius: 8px;
+      margin: 9px;
+      padding: 8px;
+    }
+    .row1{
+         display: flex;    
+         width: max-content;
+         margin: auto;
+    }
+    
+    .col-md-offset-3{
+      font-family: cursive;
+      color: blue;
+      background-color: antiquewhite;
+      padding: 15px;
+      border-radius: 9px;
+      text-align: justify;
+      margin: 6px;
+      margin-top: 12px;
+    }
+    .row{
+      padding: 9px;
+      background-color: rgb(41, 172, 9);
+      color: aliceblue;
+      text-align: center;
+    }
+    b{
+      font-size: 22px;
+      color: brown;
+    }
+    .brdr{
+      
+      border: 2px solid red;
+      border-radius: 9px;
+      background-color: rgb(150, 87, 209);
+      width: 555px;
+      margin: auto;
+    }
+    a{
+      text-decoration: none;
+      float: right;
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="row" >
+    <h1 class="col-md-3 text-center">WEATHER<a href="./accounts/logout">Logout</a></h1>
+  </nav>
+  <br >
+  <br >
+  <div class="brdr">
+  <center class="row1">
+    <form method="post" class="col-md-6">
+      {% csrf_token %}
+      <div class="input-group">
+        <input type="text" class="form-control" name="city" placeholder="Enter place name">
+        <div class="input-group-btn">
+          <button class="btn" type="submit">
+            search
+          </button>
+        </div>
+        <form>
+  </center>
+  <div class="row2">
+    {% if place_name and desc and temp and pressure and humidity %}
+    <div class="col-md-offset-3">
+      <h3><b>Place</b> : {{place_name}}</h1>
+        <h5><b>Description</b> : {{desc}}</h5>
+        <h5><b>Temp </b>: {{temp}}</h5>
+        <h5><b>Pressure </b>: {{pressure}} </h5>
+        <h5><b>Humidity </b>: {{humidity}}</h5>
+    </div>
+    {% endif %}
+  </div>
+</div>
+</body>
+
+</html>

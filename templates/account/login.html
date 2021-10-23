@@ -1,0 +1,45 @@
+{% load socialaccount %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+
+<body >
+    
+    <fieldset><Legend>LOGIN</Legend>
+    
+    <div>
+    <form action="../log" method="post" >
+        {% csrf_token %}
+        Email:<input class="input" placeholder="Enter Your Email" type="email" name="email">
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="20" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+            <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/>
+          </svg>
+     <br>
+       Password:<input class="input" placeholder="Enter Your Password" type="password" name="pwd">
+       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-lock" viewBox="0 0 16 16">
+        <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/>
+      </svg><br>
+       <input class ="btn" type="submit" value="Login" name="login">
+       {% load socialaccount %}
+       <br>
+
+
+    </form>
+    <button><a href="{% provider_login_url 'google' %}">Login With Google</a> </button>
+    <p>or</p>
+    <button><a href="../reg">register</a></button>
+</div>
+
+
+</fieldset>
+</body>
+</html>

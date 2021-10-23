@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <style>
+        body{
+            text-align: center;
+            color: rgb(12, 8, 8);
+            padding: 12px;
+        }
+        a{
+            color: rgb(255, 0, 0);
+            text-decoration: underline;
+        }
+        p{
+            margin-bottom: 12px;
+            line-height: 48px;
+        }
+        .logout, .login, .register{
+            text-decoration: none;
+            border: 2px solid forestgreen;
+            background-color: aquamarine;
+            border-radius: 5px;
+        }
+
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+</head>
+<body>
+    {% if user.is_authenticated %}
+          <p>Do you want to <a class="logout" href="./accounts/logout">Logout</a></p>
+          <p><a href="./weather">Click here to enter Weather app</a></p>
+    {% else %}
+        <h1>Please, <a class="login" href="./accounts/login">Login</a> to Continue</h1>
+        <p>or</p>
+        <h2><a class="register" href="./accounts/reg">Register</a></h2>
+    {% endif %}
+      
+</body>
+</html>

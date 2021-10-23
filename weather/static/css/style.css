@@ -1,0 +1,88 @@
+body {
+  animation: slide 1.2;
+  font-family: cursive;
+
+  background-size: cover;
+}
+div {
+  font-size: 20px;
+  color: #ffbc00;
+  width: 50%;
+  text-align: center;
+  margin: auto;
+}
+
+Legend {
+  background-color: #410052;
+  width: 122px;
+  padding: 8px;
+  font-size: 34px;
+  color: red;
+  margin: auto;
+  font-weight: bold;
+  border-top-left-radius: 22px;
+  border-bottom-right-radius: 22px;
+}
+fieldset {
+  background: linear-gradient(to right, rgb(128, 0, 38), navy);
+  border-right: none;
+  border-left: none;
+  border-width: 3px;
+  border-top-right-radius: 22px;
+  border-bottom-left-radius: 22px;
+  width: 460px;
+  margin: auto;
+}
+
+.input {
+  padding: 14px;
+  border-radius: 19px;
+  border: none;
+  width: 100%;
+  text-align: center;
+  background-color: #debf80;
+  position: relative;
+  color: white;
+  text-overflow: clip;
+}
+.input:hover {
+  border: 1px solid yellowgreen;
+  padding: 15px;
+  background-color: #fdaa05;
+  color: red;
+}
+.btn {
+  background-color: #14df1b;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 23px;
+  cursor: pointer;
+  width: 60%;
+}
+.btn:hover {
+  background-color: #4caf50;
+}
+
+button {
+  background-color: #e60e0e;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 23px;
+}
+button:hover {
+  background-color: #af4c4c;
+}
+a {
+  text-decoration: none;
+  color: white;
+  padding: 18px;
+}
+
+svg {
+  position: relative;
+  left: -93px;
+  top: -35px;
+  color: rgb(111, 0, 255);
+}
